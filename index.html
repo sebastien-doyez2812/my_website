@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF -8">
+        <meta http-equiv="X-UA-Compatible" content = "IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Seb Doyez Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    </head>
+    <body>
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <img src = "images/logo.png" class= "logo" >
+                    <ul>
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">My projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-text">
+                    <p> Software Robotics Developper</p>
+                    <h1> Hi, I'm <span> Sébastien Doyez</span>, <br> from Montréal</h1>
+                </div>
+
+
+            </div>
+        </div>
+
+<!-------- Section About me-------------->
+
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1"><img src="images/me.jpeg"></div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title">About me:</h1>
+                        <p>Passionate about engineering and cutting-edge technologies, I specialize in the fields of robotics and software. As a student of Polytech Montpellier (France), my academic journey has equipped me with a strong expertise in industrial computer sciences, robotics, microelectronics and automation.
+
+                            My commitment to innovation is reflected in my projects, academic or personal, which I share on my personal Github. These projects demonstrate my ability to design, develop and implement efficient and innovative technological solutions.
+                            
+                            I am constantly seeking new exciting challenges in the field of engineering, where I can leverage my technical skills and creativity to contribute to the development of innovative solutions.
+                            
+                            Feel free to contact me to create new professional connections!</p>
+                    
+                            <div class="tab-titles">
+                                <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                                <p class="tab-links"onclick="opentab('experience')">Experiences</p>
+                                <p class="tab-links" onclick="opentab('education')">Education</p>
+                            </div>
+                        <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Software Developpement</span><br> C, C++, C#, Python, SQL, Matlab & Simulink</li>
+                            <li><span>Software Robotics</span><br> C# programming, use of TP and Karel programs from Fanuc </li>
+                            <li><span>Embedded Systems </span><br> STM32, Arduino, Raspberry Pi, Teensy</li>
+                            <li><span>Automation Developpement</span><br> Twincat (Beckhoff), Sysmac (Omron) </li>
+                        </ul>
+                        </div>
+
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>From March 2024 to now:</span><br>R&D intern in software robotics at SAMI Agtech, Montréal </li>
+                                <li><span>From June 2023 to September 2023:</span><br>Intern at ETS Montréal </li>
+                                <li><span>From June 2022 to July 2022:</span><br>Intern at Aide Automatismes (Automation company in France) </li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>From 2020 to now:</span><br> Engineering School microelectronics & automation at Polytech Montpellier <br> Courses of microelectronics, computer sciences and robotics </li>
+                                <li><span>From 2018 to 2020:</span><br> Preparatory classes (CGPE MPSI-MP)  </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+            </div>
+        </div>
+<!------ Portfolio------------>
+<div id="portfolio">
+    <div class="container">
+    <h1 class="sub-title">My Work</h1> 
+    <br>
+    <h2 class="description"> This is some of my projects I had worked on:</h2>
+    <br>
+    <!---<div class="work-list"> -->
+    <div class="work">
+        <img src="images/SAMI.png"> </img>
+        <br>
+            <div class= "layer">
+            <h3>Intern Developper Software Robotics at Sami Agtech</h3>
+            <br>
+                <p>
+                Sami is an Industrial Multifunctional Agricultural System. Its aim is to reap fruit and
+                vegetables in fields. The ultimate objective would be to achieve a return equal to or greater
+                manual harvests, to enable American farms to cope with the lack of
+                labour force.
+                My assignments on this project were related to the robotics part. Programming is done with the
+                object oriented language C#. We also have a simulation tool Roboguide (proposed by
+                Fanuc) where SAMI is modelled. For communication between the system and the programme,
+                we use an MQTT server.
+                SAMI also has an AI part, linked to computer vision, which allows it to
+                recognize the vegetables, and send the robotic arms to those positions.
+
+                This project is my final internship that completes my engineering course at Polytech Montpellier.
+                </p>
+            <a href="https://www.linkedin.com/company/sami-agtech1/mycompany/"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+
+    </div>
+    <br>
+    <br>
+   
+    <div class="work">
+        <video autoplay muted src="images/ETS.mp4"></video>
+        <br>
+        <div class= "layer">
+            <h3>Integration of machine learning algorithms into drones and rovers.</h3>
+            <br>
+            <p>
+            The objective here was to respond to a rescue scenario in an area of risk (e.g. armed conflict). 
+            To do this, we first created two models via tensorflow’s tflite model maker library. The first is able to detect a person to be rescued, and the second to detect the person via a camera view of the EP Core rover, in order to better position itself in relation to it. 
+            Then we deployed them: the first was used in a raspberry pi: the drone sends a video stream to it, and this microcontroller analyzes the images of this stream, via the object detection created. If a target has been detected, we'll send the data back to the rovers. We then used the rover’s SDK to apply the model to the video from its camera. The aim here is to adjust the position of the robot in order to allow it to precisely catch, with the help of its pliers, the figurine representing a person in danger.
+            </p>
+            <a href="https://github.com/sebastien-doyez2812/Internship_projects/tree/main/MEA4_internship"><i class="fas fa-external-link-alt"></i></a>
+        </div>
+    </div>
+
+    <br> <br>
+
+    <div class="work">
+        <img src="images/PFE.png"> </img>
+        <br>
+        <div class= "layer">
+            <h3>Software Developpement of a model for earthquakes study bench</h3>
+            <br>
+            <p>
+            This project was carried out in partnership with the Montpellier Geoscience team. The aim was to create a microseism study bench. This project was divided into two parts: the creation of a code on Teensy 4.1 (C++ language) allowing the reading of data from IS3DWB sensors (high precision accelerometers) at a frequency of 10 kHz, pseudo-simultaneous, and also the creation of an IHM Python allowing better data manipulation.
+
+            For the HMI, I used Tkinter, allowing to make interfaces and to use other libraries such as Matplotlib. In addition to that, I used threads to allow the application to run smoothly because we had to handle the arrival of a lot of data. The reception is done with Coolterm, because it accepts a baudrate of 2 000 000 Bits/s.
+
+            The results obtained were satisfactory, the acquisition frequency was 11 kHz, which allowed the geologists to better study the precursor phenomena.
+            </p> 
+            <a href="https://github.com/sebastien-doyez2812/School_projects/tree/main/End_of_Study_Project"><i class="fas fa-external-link-alt"></i></a>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="work">
+        <img src="images/Cohoma.png"> </img>
+        <br>
+        <div class= "layer">
+            <h3>Participation in the Cohoma II challenge.</h3>
+            <br>
+            <p>
+            Since 2021, Polytech Montpellier has been participating in the Cohoma Challenge, in partnership with the French Army. The aim is to offer an innovative, semi-automated technical solution suitable for military missions. 
+            I had the chance to participate in one of the editions of this challenge. My mission was to make a correction of GPS coordinates by merging them with the data of an inertial power station. The new data needed to be easily accessible, so we turned to ROS2.  
+            So I made several codes: two programs allowed us to extract the raw GNGGA coordinates and the IMU data by publishing them on two topics. A third one was merging data through Kalman's filter.  
+            Finally, I created a launch file, with the aim of simplifying the use of these algorithms.
+            </p>
+            <a href="https://github.com/sebastien-doyez2812/School_projects/tree/main/ROS2_project"><i class="fas fa-external-link-alt"></i></a>
+        
+        </div>
+    </div>
+
+
+    <br><br>
+    <div class="work">
+    <img src="images/Coppelia.png"> </img>
+    <br>
+    <div class="layer">
+    <h3>Client-middleware-server system for sending remote commands to a robotic arm.</h3>
+    <br>
+    <p>This project consisted of sending a command in position from a server to a robotic arm, simulated on CoppeliaSim. The first server sends the commands to a middleware, which will introduce a delay in the command transmission and sends the same command back to the CoppeliaSim server. Subsequently, I improved the system by allowing the user, via the ‘d’ and ‘q’ keys, to control the position of the arm. 
+
+
+    This project was carried out under the Linux environment, and allowed us to put some concepts of networking in parallel with automation. 
+    The aim was to obtain a system that would respond to commands as quickly as possible, with no signs of instability or overshooting.</p>
+    <a href="https://github.com/sebastien-doyez2812/School_projects/tree/main/Automation_%26_networks"><i class="fas fa-external-link-alt"></i></a>
+        
+</div>
+
+</div>
+
+    </div>
+</div>
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p><i class="fa-regular fa-paper-plane"></i>doyez.sebastien34090@gmail.com</p>
+            <p><i class="fa-solid fa-phone"></i>+33 6 43 81 38 57</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/s%C3%A9bastien-doyez-042604252/"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/sebastien-doyez2812"><i class="fa-brands fa-github"></i></a>            
+            </div>
+
+
+            </div>
+            <div class="contact-right">
+                <a href="CV_Doyez_Sebastien.pdf" download class="btn btn2">Download my Resume</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+        <script>
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+            function opentab(tabname){
+                for(tablink of tablinks){
+                    tablink.classList.remove("active-link")
+                }
+
+                for(tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab")
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab")
+            }
+        </script>
+
+
+    </body>
+</html>
